@@ -21,8 +21,7 @@ img{
     min-width: fit-content;
     min-height: fit-content;
     background-size: auto;
-    margin-top: 30px;
-
+    margin: 30px;
 }
 
 form{
