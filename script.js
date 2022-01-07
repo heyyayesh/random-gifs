@@ -5,12 +5,10 @@ const shuffleBtn = document.getElementById('shuffle');
 
 let searchTerm = 'cats';
 
-function loadGif(term){
-    fetch(`https://api.giphy.com/v1/gifs/translate?api_key=QbEkjBq8o6r7Ivx6lrwh8twaHnqMbKM7&s=${term}`, {mode: 'cors'})
-    .then((response) => response.json())
-    .then((response) => {
-        img.src = response.data.images.original.url;
-    });
+async function loadGif(term){
+    const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=QbEkjBq8o6r7Ivx6lrwh8twaHnqMbKM7&s=${term}`, {mode: 'cors'})
+    const gifData = await response.json();
+    img.src = gifData.data.images.original.url;
 }
 
 okBtn.addEventListener('click', () => {
